@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Kitchen Menu</title>
+
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #000000;
+            color: #e6b94d;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            text-align: center;
+
+            padding: 25px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            display: block;
+
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+
+            margin: 0 auto 25px;
+        }
+
+        /* TITLE */
+
+        h1 {
+            margin-bottom: 22px;
+
+            color: #e6b94d;
+
+            font-size: 21px;
+
+            letter-spacing: 2px;
+        }
+
+        /* MENU BUTTONS */
+
+        .buttons {
+            width: 100%;
+            max-width: 430px;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .button {
+            display: block;
+
+            width: 100%;
+
+            padding: 18px 20px;
+
+            border: 2px solid #e6b94d;
+            border-radius: 10px;
+
+            background: #000000;
+            color: #e6b94d;
+
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #e6b94d;
+            color: #000000;
+        }
+
+        /* COMING SOON */
+
+        .disabled {
+            opacity: 0.55;
+
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .coming-soon {
+            display: block;
+
+            margin-top: 7px;
+
+            color: #9f8139;
+
+            font-size: 12px;
+            font-weight: normal;
+
+            letter-spacing: 1.5px;
+        }
+
+        /* REVIEW */
+
+        .review-box {
+            width: 100%;
+            max-width: 430px;
+
+            margin: 28px auto 0;
+            padding: 22px 18px;
+
+            border: 1px solid #e6b94d;
+            border-radius: 12px;
+
+            background: #0b0b0b;
+        }
+
+        .review-title {
+            margin-bottom: 9px;
+
+            color: #e6b94d;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .review-text {
+            margin-bottom: 18px;
+
+            color: #dddddd;
+
+            font-size: 15px;
+
+            line-height: 1.5;
+        }
+
+        .review-button {
+            display: block;
+
+            width: 100%;
+
+            padding: 17px;
+
+            border: 2px solid #e6b94d;
+            border-radius: 10px;
+
+            background: #e6b94d;
+            color: #000000;
+
+            text-decoration: none;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.2s;
+        }
+
+        .review-button:hover {
+            background: #000000;
+            color: #e6b94d;
+        }
+
+        /* BACK */
+
+        .back {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            color: #9f8139;
+
+            font-size: 14px;
+
+            text-decoration: none;
+        }
+
+        .back:hover {
+            color: #e6b94d;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 25px;
+
+            color: #9f8139;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .logo {
+                max-width: 330px;
+            }
+
+            h1 {
+                font-size: 19px;
+            }
+
+            .button {
+                padding: 17px;
+                font-size: 17px;
+            }
+
+            .review-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- LOGO -->
+
+        <img
+            src="IMG_3534.jpeg"
+            alt="Happy Kitchen Restaurant"
+            class="logo"
+        >
+
+
+        <!-- TITLE -->
+
+        <h1 id="title"></h1>
+
+
+        <!-- MENU -->
+
+        <div class="buttons">
+
+            <!-- SET MENU -->
+
+            <a
+                id="setMenu"
+                href="Menu.pdf"
+                target="_blank"
+                class="button"
+            ></a>
+
+
+            <!-- INDIVIDUAL MENU -->
+
+            <div class="button disabled">
+
+                <span id="singleMenu"></span>
+
+                <span
+                    id="comingSoon"
+                    class="coming-soon"
+                ></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW PROMOTION -->
+
+        <div class="review-box">
+
+            <div
+                class="review-title"
+                id="reviewTitle"
+            ></div>
+
+
+            <div
+                class="review-text"
+                id="reviewText"
+            ></div>
+
+
+            <a
+                href="https://maps.app.goo.gl/fqEStNnVSH5yrxrV6?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="review-button"
+                id="reviewButton"
+            ></a>
+
+        </div>
+
+
+        <!-- CHANGE LANGUAGE -->
+
+        <a
+            href="index.html"
+            class="back"
+            id="back"
+        ></a>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            HAPPY KITCHEN · PHU QUOC
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        /* GET SELECTED LANGUAGE */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const lang =
+            params.get("lang") || "en";
+
+
+        /* TRANSLATIONS */
+
+        const translations = {
+
+            /* VIETNAMESE */
+
+            vi: {
+
+                title:
+                    "CHỌN THỰC ĐƠN",
+
+                setMenu:
+                    "THỰC ĐƠN SET",
+
+                singleMenu:
+                    "THỰC ĐƠN MỘT NGƯỜI",
+
+                comingSoon:
+                    "SẮP RA MẮT",
+
+                reviewTitle:
+                    "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
+
+                reviewText:
+                    "Để lại đánh giá cho Happy Kitchen trên Google và nhận một đồ uống miễn phí!",
+
+                reviewButton:
+                    "★ ĐỂ LẠI ĐÁNH GIÁ",
+
+                back:
+                    "← Đổi ngôn ngữ"
+            },
+
+
+            /* RUSSIAN */
+
+            ru: {
+
+                title:
+                    "ВЫБЕРИТЕ МЕНЮ",
+
+                setMenu:
+                    "СЕТ-МЕНЮ",
+
+                singleMenu:
+                    "МЕНЮ НА ОДНОГО",
+
+                comingSoon:
+                    "СКОРО",
+
+                reviewTitle:
+                    "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
+
+                reviewText:
+                    "Оставьте отзыв о Happy Kitchen в Google и получите бесплатный напиток!",
+
+                reviewButton:
+                    "★ ОСТАВИТЬ ОТЗЫВ",
+
+                back:
+                    "← Сменить язык"
+            },
+
+
+            /* ENGLISH */
+
+            en: {
+
+                title:
+                    "CHOOSE YOUR MENU",
+
+                setMenu:
+                    "SET MENU",
+
+                singleMenu:
+                    "INDIVIDUAL MENU",
+
+                comingSoon:
+                    "COMING SOON",
+
+                reviewTitle:
+                    "🎁 GET A FREE DRINK",
+
+                reviewText:
+                    "Leave a Google review for Happy Kitchen and receive a free drink!",
+
+                reviewButton:
+                    "★ LEAVE A REVIEW",
+
+                back:
+                    "← Change language"
+            },
+
+
+            /* KOREAN */
+
+            ko: {
+
+                title:
+                    "메뉴를 선택하세요",
+
+                setMenu:
+                    "세트 메뉴",
+
+                singleMenu:
+                    "1인 메뉴",
+
+                comingSoon:
+                    "준비 중",
+
+                reviewTitle:
+                    "🎁 무료 음료 받기",
+
+                reviewText:
+                    "Google에 Happy Kitchen 리뷰를 남기고 무료 음료를 받으세요!",
+
+                reviewButton:
+                    "★ 리뷰 남기기",
+
+                back:
+                    "← 언어 변경"
+            }
+
+        };
+
+
+        /* FALLBACK TO ENGLISH */
+
+        const t =
+            translations[lang] || translations.en;
+
+
+        /* PAGE LANGUAGE */
+
+        document.documentElement.lang = lang;
+
+
+        /* INSERT TRANSLATIONS */
+
+        document.getElementById("title").textContent =
+            t.title;
+
+        document.getElementById("setMenu").textContent =
+            t.setMenu;
+
+        document.getElementById("singleMenu").textContent =
+            t.singleMenu;
+
+        document.getElementById("comingSoon").textContent =
+            t.comingSoon;
+
+        document.getElementById("reviewTitle").textContent =
+            t.reviewTitle;
+
+        document.getElementById("reviewText").textContent =
+            t.reviewText;
+
+        document.getElementById("reviewButton").textContent =
+            t.reviewButton;
+
+        document.getElementById("back").textContent =
+            t.back;
+
+    </script>
+
+</body>
+</html>
