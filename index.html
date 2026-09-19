@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Kitchen Restaurant</title>
+
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #000000;
+            color: #e6b94d;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            display: block;
+
+            width: 100%;
+            max-width: 480px;
+
+            height: auto;
+
+            margin: 0 auto 35px auto;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            width: 100%;
+            max-width: 430px;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 16px;
+        }
+
+        .button {
+            display: block;
+
+            width: 100%;
+
+            padding: 18px 20px;
+
+            border: 2px solid #e6b94d;
+            border-radius: 10px;
+
+            background: #000000;
+            color: #e6b94d;
+
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            letter-spacing: 1.5px;
+
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #e6b94d;
+            color: #000000;
+        }
+
+        /* REVIEW BUTTON */
+
+        .review {
+            background: #e6b94d;
+            color: #000000;
+        }
+
+        .review:hover {
+            background: #000000;
+            color: #e6b94d;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 30px;
+
+            color: #9f8139;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .logo {
+                max-width: 360px;
+                margin-bottom: 30px;
+            }
+
+            .button {
+                font-size: 17px;
+                padding: 17px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- LOGO -->
+
+        <img
+            src="IMG_3534.jpeg"
+            alt="Happy Kitchen Restaurant"
+            class="logo"
+        >
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <!-- MENU -->
+
+            <a
+                href="Menu.pdf"
+                target="_blank"
+                class="button"
+            >
+                VIEW MENU
+            </a>
+
+
+            <!-- GOOGLE REVIEW -->
+
+            <a
+                href="https://maps.app.goo.gl/fqEStNnVSH5yrxrV6?g_st=ic"
+                target="_blank"
+                rel="noopener"
+                class="button review"
+            >
+                ★ LEAVE A REVIEW
+            </a>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            HAPPY KITCHEN · PHU QUOC
+        </footer>
+
+    </main>
+
+</body>
+</html>
