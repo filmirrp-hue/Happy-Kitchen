@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Kitchen Menu</title>
-
     <meta name="theme-color" content="#000000">
 
     <style>
@@ -17,7 +16,6 @@
 
         body {
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,7 +24,6 @@
             color: #e6b94d;
 
             font-family: Arial, Helvetica, sans-serif;
-
             text-align: center;
 
             padding: 25px 20px;
@@ -41,11 +38,9 @@
 
         .logo {
             display: block;
-
             width: 100%;
             max-width: 380px;
             height: auto;
-
             margin: 0 auto 25px;
         }
 
@@ -53,31 +48,25 @@
 
         h1 {
             margin-bottom: 22px;
-
             color: #e6b94d;
-
             font-size: 21px;
-
             letter-spacing: 2px;
         }
 
-        /* MENU BUTTONS */
+        /* BUTTONS */
 
         .buttons {
             width: 100%;
             max-width: 430px;
-
             margin: 0 auto;
 
             display: flex;
             flex-direction: column;
-
             gap: 15px;
         }
 
         .button {
             display: block;
-
             width: 100%;
 
             padding: 18px 20px;
@@ -92,7 +81,6 @@
 
             font-size: 18px;
             font-weight: bold;
-
             letter-spacing: 1px;
 
             transition: 0.2s;
@@ -107,21 +95,18 @@
 
         .disabled {
             opacity: 0.55;
-
             cursor: default;
             pointer-events: none;
         }
 
         .coming-soon {
             display: block;
-
             margin-top: 7px;
 
             color: #9f8139;
 
             font-size: 12px;
             font-weight: normal;
-
             letter-spacing: 1.5px;
         }
 
@@ -155,13 +140,11 @@
             color: #dddddd;
 
             font-size: 15px;
-
             line-height: 1.5;
         }
 
         .review-button {
             display: block;
-
             width: 100%;
 
             padding: 17px;
@@ -176,7 +159,6 @@
 
             font-size: 17px;
             font-weight: bold;
-
             letter-spacing: 1px;
 
             transition: 0.2s;
@@ -185,6 +167,38 @@
         .review-button:hover {
             background: #000000;
             color: #e6b94d;
+        }
+
+        /* FACEBOOK */
+
+        .facebook {
+            display: block;
+
+            width: 100%;
+            max-width: 430px;
+
+            margin: 15px auto 0;
+            padding: 17px;
+
+            border: 2px solid #e6b94d;
+            border-radius: 10px;
+
+            background: #000000;
+            color: #e6b94d;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            transition: 0.2s;
+        }
+
+        .facebook:hover {
+            background: #e6b94d;
+            color: #000000;
         }
 
         /* BACK */
@@ -213,7 +227,6 @@
             color: #9f8139;
 
             font-size: 12px;
-
             letter-spacing: 1.5px;
         }
 
@@ -245,275 +258,294 @@
     </style>
 </head>
 
-
 <body>
 
-    <main class="container">
+<main class="container">
 
-        <!-- LOGO -->
+    <!-- LOGO -->
 
-        <img
-            src="IMG_3534.jpeg"
-            alt="Happy Kitchen Restaurant"
-            class="logo"
-        >
-
-
-        <!-- TITLE -->
-
-        <h1 id="title"></h1>
+    <img
+        src="IMG_3534.jpeg"
+        alt="Happy Kitchen Restaurant"
+        class="logo"
+    >
 
 
-        <!-- MENU -->
+    <!-- TITLE -->
 
-        <div class="buttons">
-
-            <!-- SET MENU -->
-
-            <a
-                id="setMenu"
-                href="Menu.pdf"
-                target="_blank"
-                class="button"
-            ></a>
+    <h1 id="title"></h1>
 
 
-            <!-- INDIVIDUAL MENU -->
+    <!-- MENU -->
 
-            <div class="button disabled">
+    <div class="buttons">
 
-                <span id="singleMenu"></span>
-
-                <span
-                    id="comingSoon"
-                    class="coming-soon"
-                ></span>
-
-            </div>
-
-        </div>
-
-
-        <!-- REVIEW PROMOTION -->
-
-        <div class="review-box">
-
-            <div
-                class="review-title"
-                id="reviewTitle"
-            ></div>
-
-
-            <div
-                class="review-text"
-                id="reviewText"
-            ></div>
-
-
-            <a
-                href="https://maps.app.goo.gl/fqEStNnVSH5yrxrV6?g_st=ic"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="review-button"
-                id="reviewButton"
-            ></a>
-
-        </div>
-
-
-        <!-- CHANGE LANGUAGE -->
+        <!-- SET MENU -->
 
         <a
-            href="index.html"
-            class="back"
-            id="back"
+            id="setMenu"
+            href="Menu.pdf"
+            target="_blank"
+            class="button"
         ></a>
 
 
-        <!-- FOOTER -->
+        <!-- INDIVIDUAL MENU -->
 
-        <footer>
-            HAPPY KITCHEN · PHU QUOC
-        </footer>
+        <div class="button disabled">
 
-    </main>
+            <span id="singleMenu"></span>
 
+            <span
+                id="comingSoon"
+                class="coming-soon"
+            ></span>
 
-    <script>
+        </div>
 
-        /* GET SELECTED LANGUAGE */
+    </div>
 
-        const params =
-            new URLSearchParams(window.location.search);
 
-        const lang =
-            params.get("lang") || "en";
+    <!-- REVIEW -->
 
+    <div class="review-box">
 
-        /* TRANSLATIONS */
+        <div
+            class="review-title"
+            id="reviewTitle"
+        ></div>
 
-        const translations = {
+        <div
+            class="review-text"
+            id="reviewText"
+        ></div>
 
-            /* VIETNAMESE */
+        <a
+            href="https://maps.app.goo.gl/fqEStNnVSH5yrxrV6?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="review-button"
+            id="reviewButton"
+        ></a>
 
-            vi: {
+    </div>
 
-                title:
-                    "CHỌN THỰC ĐƠN",
 
-                setMenu:
-                    "THỰC ĐƠN SET",
+    <!-- FACEBOOK -->
 
-                singleMenu:
-                    "THỰC ĐƠN MỘT NGƯỜI",
+    <a
+        href="https://www.facebook.com/share/1DLSmfL4w2/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="facebook"
+        id="facebookButton"
+    ></a>
 
-                comingSoon:
-                    "SẮP RA MẮT",
 
-                reviewTitle:
-                    "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
+    <!-- CHANGE LANGUAGE -->
 
-                reviewText:
-                    "Để lại đánh giá cho Happy Kitchen trên Google và nhận một đồ uống miễn phí!",
+    <a
+        href="index.html"
+        class="back"
+        id="back"
+    ></a>
 
-                reviewButton:
-                    "★ ĐỂ LẠI ĐÁNH GIÁ",
 
-                back:
-                    "← Đổi ngôn ngữ"
-            },
+    <!-- FOOTER -->
 
+    <footer>
+        HAPPY KITCHEN · PHU QUOC
+    </footer>
 
-            /* RUSSIAN */
+</main>
 
-            ru: {
 
-                title:
-                    "ВЫБЕРИТЕ МЕНЮ",
+<script>
 
-                setMenu:
-                    "СЕТ-МЕНЮ",
+    const params =
+        new URLSearchParams(window.location.search);
 
-                singleMenu:
-                    "МЕНЮ НА ОДНОГО",
+    const lang =
+        params.get("lang") || "en";
 
-                comingSoon:
-                    "СКОРО",
 
-                reviewTitle:
-                    "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
+    const translations = {
 
-                reviewText:
-                    "Оставьте отзыв о Happy Kitchen в Google и получите бесплатный напиток!",
+        /* VIETNAMESE */
 
-                reviewButton:
-                    "★ ОСТАВИТЬ ОТЗЫВ",
+        vi: {
 
-                back:
-                    "← Сменить язык"
-            },
+            title:
+                "CHỌN THỰC ĐƠN",
 
+            setMenu:
+                "THỰC ĐƠN SET",
 
-            /* ENGLISH */
+            singleMenu:
+                "THỰC ĐƠN MỘT NGƯỜI",
 
-            en: {
+            comingSoon:
+                "SẮP RA MẮT",
 
-                title:
-                    "CHOOSE YOUR MENU",
+            reviewTitle:
+                "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
 
-                setMenu:
-                    "SET MENU",
+            reviewText:
+                "Để lại đánh giá cho Happy Kitchen trên Google và nhận một đồ uống miễn phí!",
 
-                singleMenu:
-                    "INDIVIDUAL MENU",
+            reviewButton:
+                "★ ĐỂ LẠI ĐÁNH GIÁ",
 
-                comingSoon:
-                    "COMING SOON",
+            facebookButton:
+                "FACEBOOK CỦA CHÚNG TÔI",
 
-                reviewTitle:
-                    "🎁 GET A FREE DRINK",
+            back:
+                "← Đổi ngôn ngữ"
+        },
 
-                reviewText:
-                    "Leave a Google review for Happy Kitchen and receive a free drink!",
 
-                reviewButton:
-                    "★ LEAVE A REVIEW",
+        /* RUSSIAN */
 
-                back:
-                    "← Change language"
-            },
+        ru: {
 
+            title:
+                "ВЫБЕРИТЕ МЕНЮ",
 
-            /* KOREAN */
+            setMenu:
+                "СЕТ-МЕНЮ",
 
-            ko: {
+            singleMenu:
+                "МЕНЮ НА ОДНОГО",
 
-                title:
-                    "메뉴를 선택하세요",
+            comingSoon:
+                "СКОРО",
 
-                setMenu:
-                    "세트 메뉴",
+            reviewTitle:
+                "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
 
-                singleMenu:
-                    "1인 메뉴",
+            reviewText:
+                "Оставьте отзыв о Happy Kitchen в Google и получите бесплатный напиток!",
 
-                comingSoon:
-                    "준비 중",
+            reviewButton:
+                "★ ОСТАВИТЬ ОТЗЫВ",
 
-                reviewTitle:
-                    "🎁 무료 음료 받기",
+            facebookButton:
+                "МЫ В FACEBOOK",
 
-                reviewText:
-                    "Google에 Happy Kitchen 리뷰를 남기고 무료 음료를 받으세요!",
+            back:
+                "← Сменить язык"
+        },
 
-                reviewButton:
-                    "★ 리뷰 남기기",
 
-                back:
-                    "← 언어 변경"
-            }
+        /* ENGLISH */
 
-        };
+        en: {
 
+            title:
+                "CHOOSE YOUR MENU",
 
-        /* FALLBACK TO ENGLISH */
+            setMenu:
+                "SET MENU",
 
-        const t =
-            translations[lang] || translations.en;
+            singleMenu:
+                "INDIVIDUAL MENU",
 
+            comingSoon:
+                "COMING SOON",
 
-        /* PAGE LANGUAGE */
+            reviewTitle:
+                "🎁 GET A FREE DRINK",
 
-        document.documentElement.lang = lang;
+            reviewText:
+                "Leave a Google review for Happy Kitchen and receive a free drink!",
 
+            reviewButton:
+                "★ LEAVE A REVIEW",
 
-        /* INSERT TRANSLATIONS */
+            facebookButton:
+                "FOLLOW US ON FACEBOOK",
 
-        document.getElementById("title").textContent =
-            t.title;
+            back:
+                "← Change language"
+        },
 
-        document.getElementById("setMenu").textContent =
-            t.setMenu;
 
-        document.getElementById("singleMenu").textContent =
-            t.singleMenu;
+        /* KOREAN */
 
-        document.getElementById("comingSoon").textContent =
-            t.comingSoon;
+        ko: {
 
-        document.getElementById("reviewTitle").textContent =
-            t.reviewTitle;
+            title:
+                "메뉴를 선택하세요",
 
-        document.getElementById("reviewText").textContent =
-            t.reviewText;
+            setMenu:
+                "세트 메뉴",
 
-        document.getElementById("reviewButton").textContent =
-            t.reviewButton;
+            singleMenu:
+                "1인 메뉴",
 
-        document.getElementById("back").textContent =
-            t.back;
+            comingSoon:
+                "준비 중",
 
-    </script>
+            reviewTitle:
+                "🎁 무료 음료 받기",
+
+            reviewText:
+                "Google에 Happy Kitchen 리뷰를 남기고 무료 음료를 받으세요!",
+
+            reviewButton:
+                "★ 리뷰 남기기",
+
+            facebookButton:
+                "FACEBOOK 팔로우",
+
+            back:
+                "← 언어 변경"
+        }
+
+    };
+
+
+    /* FALLBACK TO ENGLISH */
+
+    const t =
+        translations[lang] || translations.en;
+
+
+    /* PAGE LANGUAGE */
+
+    document.documentElement.lang = lang;
+
+
+    /* INSERT TEXT */
+
+    document.getElementById("title").textContent =
+        t.title;
+
+    document.getElementById("setMenu").textContent =
+        t.setMenu;
+
+    document.getElementById("singleMenu").textContent =
+        t.singleMenu;
+
+    document.getElementById("comingSoon").textContent =
+        t.comingSoon;
+
+    document.getElementById("reviewTitle").textContent =
+        t.reviewTitle;
+
+    document.getElementById("reviewText").textContent =
+        t.reviewText;
+
+    document.getElementById("reviewButton").textContent =
+        t.reviewButton;
+
+    document.getElementById("facebookButton").textContent =
+        t.facebookButton;
+
+    document.getElementById("back").textContent =
+        t.back;
+
+</script>
 
 </body>
 </html>
