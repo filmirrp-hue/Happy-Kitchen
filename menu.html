@@ -99,27 +99,6 @@
             color: #000000;
         }
 
-        /* COMING SOON */
-
-        .disabled {
-            opacity: 0.55;
-
-            cursor: default;
-            pointer-events: none;
-        }
-
-        .coming-soon {
-            display: block;
-
-            margin-top: 7px;
-
-            color: #9f8139;
-
-            font-size: 12px;
-            font-weight: normal;
-            letter-spacing: 1.5px;
-        }
-
         /* REVIEW */
 
         .review-box {
@@ -301,7 +280,7 @@
     <h1 id="title"></h1>
 
 
-    <!-- MENU -->
+    <!-- MENU BUTTONS -->
 
     <div class="buttons">
 
@@ -318,16 +297,13 @@
 
         <!-- INDIVIDUAL MENU -->
 
-        <div class="button disabled">
-
-            <span id="singleMenu"></span>
-
-            <span
-                id="comingSoon"
-                class="coming-soon"
-            ></span>
-
-        </div>
+        <a
+            id="singleMenu"
+            href="indmenu.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button"
+        ></a>
 
     </div>
 
@@ -435,9 +411,6 @@
             singleMenu:
                 "THỰC ĐƠN MỘT NGƯỜI",
 
-            comingSoon:
-                "SẮP RA MẮT",
-
             reviewTitle:
                 "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
 
@@ -472,9 +445,6 @@
 
             singleMenu:
                 "МЕНЮ НА ОДНОГО",
-
-            comingSoon:
-                "СКОРО",
 
             reviewTitle:
                 "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
@@ -511,9 +481,6 @@
             singleMenu:
                 "INDIVIDUAL MENU",
 
-            comingSoon:
-                "COMING SOON",
-
             reviewTitle:
                 "🎁 GET A FREE DRINK",
 
@@ -548,9 +515,6 @@
 
             singleMenu:
                 "1인 메뉴",
-
-            comingSoon:
-                "준비 중",
 
             reviewTitle:
                 "🎁 무료 음료 받기",
@@ -595,9 +559,6 @@
 
     document.getElementById("singleMenu").textContent =
         t.singleMenu;
-
-    document.getElementById("comingSoon").textContent =
-        t.comingSoon;
 
     document.getElementById("reviewTitle").textContent =
         t.reviewTitle;
