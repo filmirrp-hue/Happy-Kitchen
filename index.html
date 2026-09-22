@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Kitchen Restaurant</title>
-
     <meta name="theme-color" content="#000000">
 
     <style>
@@ -26,7 +25,6 @@
             color: #e6b94d;
 
             font-family: Arial, Helvetica, sans-serif;
-
             text-align: center;
 
             padding: 30px 20px;
@@ -37,19 +35,15 @@
             max-width: 600px;
         }
 
-        /* LOGO */
-
         .logo {
             display: block;
 
             width: 100%;
-            max-width: 480px;
+            max-width: 460px;
             height: auto;
 
             margin: 0 auto 30px;
         }
-
-        /* TITLE */
 
         .title {
             margin-bottom: 22px;
@@ -61,8 +55,6 @@
 
             letter-spacing: 2px;
         }
-
-        /* LANGUAGE BUTTONS */
 
         .buttons {
             width: 100%;
@@ -104,19 +96,14 @@
             color: #000000;
         }
 
-        /* FOOTER */
-
         footer {
             margin-top: 30px;
 
             color: #9f8139;
 
             font-size: 12px;
-
             letter-spacing: 1.5px;
         }
-
-        /* MOBILE */
 
         @media (max-width: 500px) {
 
@@ -125,86 +112,56 @@
             }
 
             .logo {
-                max-width: 360px;
-                margin-bottom: 25px;
-            }
-
-            .title {
-                font-size: 16px;
+                max-width: 350px;
             }
 
             .button {
-                padding: 17px;
                 font-size: 17px;
+                padding: 17px;
             }
         }
     </style>
 </head>
 
-
 <body>
 
-    <main class="container">
+<main class="container">
 
-        <!-- LOGO -->
+    <img
+        src="IMG_3534.jpeg"
+        alt="Happy Kitchen"
+        class="logo"
+    >
 
-        <img
-            src="IMG_3534.jpeg"
-            alt="Happy Kitchen Restaurant"
-            class="logo"
-        >
+    <div class="title">
+        SELECT LANGUAGE
+    </div>
 
+    <div class="buttons">
 
-        <!-- LANGUAGE -->
+        <a href="menu.html?lang=vi" class="button">
+            🇻🇳 Tiếng Việt
+        </a>
 
-        <div class="title">
-            SELECT LANGUAGE
-        </div>
+        <a href="menu.html?lang=ru" class="button">
+            🇷🇺 Русский
+        </a>
 
+        <a href="menu.html?lang=en" class="button">
+            🇬🇧 English
+        </a>
 
-        <div class="buttons">
+        <a href="menu.html?lang=ko" class="button">
+            🇰🇷 한국어
+        </a>
 
-            <a
-                href="menu.html?lang=vi"
-                class="button"
-            >
-                🇻🇳 Tiếng Việt
-            </a>
+    </div>
 
+    <footer>
+        HAPPY KITCHEN · PHU QUOC
+    </footer>
 
-            <a
-                href="menu.html?lang=ru"
-                class="button"
-            >
-                🇷🇺 Русский
-            </a>
-
-
-            <a
-                href="menu.html?lang=en"
-                class="button"
-            >
-                🇬🇧 English
-            </a>
-
-
-            <a
-                href="menu.html?lang=ko"
-                class="button"
-            >
-                🇰🇷 한국어
-            </a>
-
-        </div>
-
-
-        <!-- FOOTER -->
-
-        <footer>
-            HAPPY KITCHEN · PHU QUOC
-        </footer>
-
-    </main>
+</main>
 
 </body>
 </html>
