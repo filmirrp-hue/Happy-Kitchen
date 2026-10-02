@@ -16,40 +16,31 @@
 
         body {
             min-height: 100vh;
-
             background: #000000;
             color: #e6b94d;
-
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-
             padding: 30px 20px;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
-
             margin: 0 auto;
         }
 
         h1 {
             margin: 10px 0 25px;
-
             color: #e6b94d;
-
             font-size: 21px;
             letter-spacing: 2px;
         }
-
-        /* RESTAURANT CARD */
 
         .restaurant-card {
             width: 100%;
             max-width: 430px;
 
             margin: 0 auto 20px;
-
             padding: 22px;
 
             border: 2px solid #e6b94d;
@@ -60,40 +51,30 @@
 
         .restaurant-logo {
             display: block;
-
             width: 100%;
             max-width: 300px;
             max-height: 190px;
-
             object-fit: contain;
-
             margin: 0 auto 18px;
         }
 
         .restaurant-name {
             color: #ffffff;
-
             font-size: 22px;
             font-weight: bold;
-
             letter-spacing: 1.5px;
-
             margin-bottom: 7px;
         }
 
         .restaurant-description {
             min-height: 22px;
-
             color: #aaaaaa;
-
             font-size: 14px;
-
             margin-bottom: 18px;
         }
 
         .open-button {
             display: block;
-
             width: 100%;
 
             padding: 17px;
@@ -105,49 +86,31 @@
             color: #000000;
 
             text-decoration: none;
-
             font-size: 17px;
             font-weight: bold;
-
             letter-spacing: 1px;
-
-            transition: 0.2s;
         }
-
-        .open-button:hover {
-            background: #000000;
-            color: #e6b94d;
-        }
-
-        /* BACK */
 
         .back {
             display: inline-block;
-
             margin-top: 10px;
-
             color: #9f8139;
-
             text-decoration: none;
-
             font-size: 14px;
-        }
-
-        .back:hover {
-            color: #e6b94d;
         }
 
         footer {
             margin-top: 25px;
-
             color: #9f8139;
-
             font-size: 12px;
             letter-spacing: 1.5px;
         }
 
-        @media (max-width: 500px) {
+        .hidden {
+            display: none;
+        }
 
+        @media (max-width: 500px) {
             body {
                 padding: 20px;
             }
@@ -162,7 +125,6 @@
 
             .restaurant-logo {
                 max-width: 260px;
-                max-height: 160px;
             }
         }
     </style>
@@ -173,7 +135,6 @@
 <main class="container">
 
     <h1 id="title"></h1>
-
 
     <!-- HAPPY KITCHEN -->
 
@@ -204,7 +165,10 @@
 
     <!-- BELLA LOUNGE -->
 
-    <div class="restaurant-card">
+    <div
+        class="restaurant-card"
+        id="bellaCard"
+    >
 
         <img
             src="IMG_3613.jpeg"
@@ -229,14 +193,11 @@
     </div>
 
 
-    <!-- BACK -->
-
     <a
         href="index.html"
         class="back"
         id="back"
     ></a>
-
 
     <footer>
         HAPPY KITCHEN · BELLA LOUNGE · PHU QUOC
@@ -247,126 +208,88 @@
 
 <script>
 
-    const params =
-        new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
+const lang = params.get("lang") || "en";
 
-    const lang =
-        params.get("lang") || "en";
+const translations = {
 
+    vi: {
+        title: "CHỌN KHU VỰC",
+        happyDescription: "Nhà hàng Happy Kitchen",
+        bellaDescription: "Phòng VIP · Bella Lounge",
+        open: "XEM THỰC ĐƠN",
+        back: "← Đổi ngôn ngữ"
+    },
 
-    const translations = {
+    ru: {
+        title: "ВЫБЕРИТЕ РАЗДЕЛ",
+        happyDescription: "Ресторан Happy Kitchen",
+        bellaDescription: "VIP-залы · Bella Lounge",
+        open: "ОТКРЫТЬ МЕНЮ",
+        back: "← Сменить язык"
+    },
 
-        vi: {
+    en: {
+        title: "CHOOSE YOUR DINING AREA",
+        happyDescription: "Happy Kitchen Restaurant",
+        bellaDescription: "VIP Rooms · Bella Lounge",
+        open: "VIEW MENU",
+        back: "← Change language"
+    },
 
-            title:
-                "CHỌN KHU VỰC",
+    ko: {
+        title: "이용 공간을 선택하세요",
+        happyDescription: "Happy Kitchen 레스토랑",
+        bellaDescription: "VIP 룸 · Bella Lounge",
+        open: "메뉴 보기",
+        back: "← 언어 변경"
+    },
 
-            happyDescription:
-                "Nhà hàng Happy Kitchen",
+    zh: {
+        title: "选择餐厅",
+        happyDescription: "Happy Kitchen 餐厅",
+        bellaDescription: "",
+        open: "查看菜单",
+        back: "← 更改语言"
+    }
 
-            bellaDescription:
-                "Phòng VIP · Bella Lounge",
+};
 
-            open:
-                "XEM THỰC ĐƠN",
+const t = translations[lang] || translations.en;
 
-            back:
-                "← Đổi ngôn ngữ"
-        },
+document.documentElement.lang = lang;
 
+document.getElementById("title").textContent =
+    t.title;
 
-        ru: {
+document.getElementById("happyDescription").textContent =
+    t.happyDescription;
 
-            title:
-                "ВЫБЕРИТЕ РАЗДЕЛ",
+document.getElementById("bellaDescription").textContent =
+    t.bellaDescription;
 
-            happyDescription:
-                "Ресторан Happy Kitchen",
+document.getElementById("happyButton").textContent =
+    t.open;
 
-            bellaDescription:
-                "VIP-залы · Bella Lounge",
+document.getElementById("bellaButton").textContent =
+    t.open;
 
-            open:
-                "ОТКРЫТЬ МЕНЮ",
+document.getElementById("back").textContent =
+    t.back;
 
-            back:
-                "← Сменить язык"
-        },
+document.getElementById("happyButton").href =
+    "section.html?place=happy&lang=" + lang;
 
-
-        en: {
-
-            title:
-                "CHOOSE YOUR DINING AREA",
-
-            happyDescription:
-                "Happy Kitchen Restaurant",
-
-            bellaDescription:
-                "VIP Rooms · Bella Lounge",
-
-            open:
-                "VIEW MENU",
-
-            back:
-                "← Change language"
-        },
-
-
-        ko: {
-
-            title:
-                "이용 공간을 선택하세요",
-
-            happyDescription:
-                "Happy Kitchen 레스토랑",
-
-            bellaDescription:
-                "VIP 룸 · Bella Lounge",
-
-            open:
-                "메뉴 보기",
-
-            back:
-                "← 언어 변경"
-        }
-
-    };
+document.getElementById("bellaButton").href =
+    "section.html?place=bella&lang=" + lang;
 
 
-    const t =
-        translations[lang] || translations.en;
+/* CHINESE:
+   BELLA LOUNGE IS NOT READY YET */
 
-
-    document.documentElement.lang = lang;
-
-
-    document.getElementById("title").textContent =
-        t.title;
-
-    document.getElementById("happyDescription").textContent =
-        t.happyDescription;
-
-    document.getElementById("bellaDescription").textContent =
-        t.bellaDescription;
-
-    document.getElementById("happyButton").textContent =
-        t.open;
-
-    document.getElementById("bellaButton").textContent =
-        t.open;
-
-    document.getElementById("back").textContent =
-        t.back;
-
-
-    /* LINKS WITH LANGUAGE */
-
-    document.getElementById("happyButton").href =
-        "section.html?place=happy&lang=" + lang;
-
-    document.getElementById("bellaButton").href =
-        "section.html?place=bella&lang=" + lang;
+if (lang === "zh") {
+    document.getElementById("bellaCard").classList.add("hidden");
+}
 
 </script>
 
