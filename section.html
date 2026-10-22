@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Menu</title>
+    <title>Restaurant Menu</title>
     <meta name="theme-color" content="#000000">
 
     <style>
@@ -16,21 +17,17 @@
 
         body {
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-
             background: #000000;
             color: #e6b94d;
-
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-
             padding: 25px 20px;
         }
 
         .container {
             width: 100%;
             max-width: 600px;
+            margin: 0 auto;
         }
 
         .logo {
@@ -43,7 +40,6 @@
         }
 
         h1 {
-            color: #e6b94d;
             font-size: 22px;
             letter-spacing: 2px;
             margin-bottom: 22px;
@@ -53,7 +49,6 @@
             width: 100%;
             max-width: 430px;
             margin: 0 auto;
-
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -62,35 +57,32 @@
         .button {
             display: block;
             width: 100%;
-
             padding: 18px 15px;
-
             border: 2px solid #e6b94d;
             border-radius: 10px;
-
             background: #000000;
             color: #e6b94d;
-
             text-decoration: none;
-
             font-size: 17px;
             font-weight: bold;
-
             letter-spacing: 1px;
             line-height: 1.4;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #e6b94d;
+            color: #000000;
         }
 
         .promo-box,
         .review-box {
             width: 100%;
             max-width: 430px;
-
             margin: 25px auto 0;
             padding: 20px 18px;
-
             border: 1px solid #e6b94d;
             border-radius: 12px;
-
             background: #0b0b0b;
         }
 
@@ -99,7 +91,6 @@
         }
 
         .promo-label {
-            color: #e6b94d;
             font-size: 13px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -114,7 +105,6 @@
         }
 
         .promo-price {
-            color: #e6b94d;
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 15px;
@@ -124,23 +114,24 @@
         .review-button {
             display: block;
             width: 100%;
-
             padding: 16px;
-
             border: 2px solid #e6b94d;
             border-radius: 10px;
-
             background: #e6b94d;
             color: #000000;
-
             text-decoration: none;
-
             font-size: 16px;
             font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .promo-button:hover,
+        .review-button:hover {
+            background: #000000;
+            color: #e6b94d;
         }
 
         .review-title {
-            color: #e6b94d;
             font-size: 19px;
             font-weight: bold;
             margin-bottom: 9px;
@@ -156,9 +147,7 @@
         .social-links {
             width: 100%;
             max-width: 430px;
-
             margin: 14px auto 0;
-
             display: flex;
             flex-direction: column;
             gap: 11px;
@@ -166,29 +155,32 @@
 
         .social-button {
             display: block;
-
             padding: 16px;
-
             border: 2px solid #e6b94d;
             border-radius: 10px;
-
             color: #e6b94d;
             background: #000000;
-
             text-decoration: none;
-
             font-size: 15px;
             font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .social-button:hover {
+            background: #e6b94d;
+            color: #000000;
         }
 
         .back {
             display: inline-block;
             margin-top: 25px;
-
             color: #9f8139;
-
             text-decoration: none;
             font-size: 14px;
+        }
+
+        .back:hover {
+            color: #e6b94d;
         }
 
         footer {
@@ -199,10 +191,14 @@
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         @media (max-width: 500px) {
+            body {
+                padding: 20px 15px;
+            }
+
             .logo {
                 max-width: 320px;
                 max-height: 180px;
@@ -215,6 +211,10 @@
             .button {
                 font-size: 16px;
             }
+
+            .promo-title {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
@@ -223,26 +223,28 @@
 
 <main class="container">
 
+    <!-- RESTAURANT LOGO -->
+
     <img
         id="logo"
         class="logo"
         alt="Restaurant Logo"
     >
 
+    <!-- PAGE TITLE -->
+
     <h1 id="title"></h1>
+
+    <!-- MENU BUTTONS -->
 
     <div
         class="buttons"
         id="menuButtons"
     ></div>
 
+    <!-- HAPPY KITCHEN PROMOTION -->
 
-    <!-- PROMOTION -->
-
-    <div
-        class="promo-box"
-        id="promoBox"
-    >
+    <div class="promo-box" id="promoBox">
 
         <div
             class="promo-label"
@@ -267,13 +269,9 @@
 
     </div>
 
-
     <!-- GOOGLE REVIEW -->
 
-    <div
-        class="review-box"
-        id="reviewBox"
-    >
+    <div class="review-box" id="reviewBox">
 
         <div
             class="review-title"
@@ -295,13 +293,9 @@
 
     </div>
 
+    <!-- FACEBOOK AND TRIPADVISOR -->
 
-    <!-- SOCIAL -->
-
-    <div
-        class="social-links"
-        id="socialLinks"
-    >
+    <div class="social-links" id="socialLinks">
 
         <a
             href="https://www.facebook.com/share/1DLSmfL4w2/?mibextid=wwXIfr"
@@ -321,304 +315,320 @@
 
     </div>
 
+    <!-- BACK -->
 
-    <a
-        id="back"
-        class="back"
-    ></a>
+    <a id="back" class="back"></a>
+
+    <!-- FOOTER -->
 
     <footer id="footer"></footer>
 
 </main>
 
-
 <script>
 
-const params = new URLSearchParams(window.location.search);
+    /* URL PARAMETERS */
 
-const lang = params.get("lang") || "en";
-const place = params.get("place") || "happy";
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
+    const allowedLanguages = [
+        "vi", "ru", "en", "ko", "zh"
+    ];
 
-const translations = {
+    let lang = params.get("lang");
 
-    vi: {
-        chooseMenu: "CHỌN THỰC ĐƠN",
-        happyTour: "THỰC ĐƠN ĐOÀN DU LỊCH (ĐẶT TRƯỚC)",
-        happyAlaCarte: "THỰC ĐƠN GỌI MÓN",
-        happyDrinks: "THỰC ĐƠN ĐỒ UỐNG",
-        bellaLounge: "THỰC ĐƠN BELLA LOUNGE",
-        bellaBar: "THỰC ĐƠN ĐỒ UỐNG",
-
-        promoLabel: "ƯU ĐÃI ĐẶC BIỆT",
-        promoButton: "XEM ƯU ĐÃI",
-
-        reviewTitle: "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
-        reviewText: "Để lại đánh giá cho Happy Kitchen trên Google và nhận một đồ uống miễn phí!",
-        reviewButton: "★ ĐỂ LẠI ĐÁNH GIÁ",
-
-        facebook: "FACEBOOK CỦA CHÚNG TÔI",
-        tripadvisor: "XEM TRÊN TRIPADVISOR",
-        back: "← Quay lại"
-    },
-
-
-    ru: {
-        chooseMenu: "ВЫБЕРИТЕ МЕНЮ",
-        happyTour: "МЕНЮ ДЛЯ ТУРГРУПП (ПО ПРЕДЗАКАЗУ)",
-        happyAlaCarte: "МЕНЮ À LA CARTE",
-        happyDrinks: "НАПИТКИ",
-        bellaLounge: "МЕНЮ BELLA LOUNGE",
-        bellaBar: "БАРНАЯ КАРТА",
-
-        promoLabel: "СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ",
-        promoButton: "ПОСМОТРЕТЬ АКЦИЮ",
-
-        reviewTitle: "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
-        reviewText: "Оставьте отзыв о Happy Kitchen в Google и получите бесплатный напиток!",
-        reviewButton: "★ ОСТАВИТЬ ОТЗЫВ",
-
-        facebook: "МЫ В FACEBOOK",
-        tripadvisor: "МЫ НА TRIPADVISOR",
-        back: "← Назад"
-    },
-
-
-    en: {
-        chooseMenu: "CHOOSE YOUR MENU",
-        happyTour: "TOUR GROUP MENU (PRE-ORDER)",
-        happyAlaCarte: "À LA CARTE",
-        happyDrinks: "DRINKS",
-        bellaLounge: "BELLA LOUNGE MENU",
-        bellaBar: "BAR MENU",
-
-        promoLabel: "SPECIAL OFFER",
-        promoButton: "VIEW OFFER",
-
-        reviewTitle: "🎁 GET A FREE DRINK",
-        reviewText: "Leave a Google review for Happy Kitchen and receive a free drink!",
-        reviewButton: "★ LEAVE A REVIEW",
-
-        facebook: "FOLLOW US ON FACEBOOK",
-        tripadvisor: "VISIT US ON TRIPADVISOR",
-        back: "← Back"
-    },
-
-
-    ko: {
-        chooseMenu: "메뉴를 선택하세요",
-        happyTour: "관광 단체 메뉴 (사전 주문)",
-        happyAlaCarte: "단품 메뉴",
-        happyDrinks: "음료 메뉴",
-        bellaLounge: "BELLA LOUNGE 메뉴",
-        bellaBar: "바 메뉴",
-
-        promoLabel: "특별 프로모션",
-        promoButton: "프로모션 보기",
-
-        reviewTitle: "🎁 무료 음료 받기",
-        reviewText: "Google에 Happy Kitchen 리뷰를 남기고 무료 음료를 받으세요!",
-        reviewButton: "★ 리뷰 남기기",
-
-        facebook: "FACEBOOK 팔로우",
-        tripadvisor: "TRIPADVISOR에서 보기",
-        back: "← 뒤로"
-    },
-
-
-    zh: {
-        chooseMenu: "选择菜单",
-
-        happyAlaCarte: "单点菜单",
-
-        promoLabel: "特别优惠",
-        promoButton: "查看优惠",
-
-        reviewTitle: "🎁 免费领取饮品",
-        reviewText: "在 Google 上为 Happy Kitchen 留下评价，即可免费获得一杯饮品！",
-        reviewButton: "★ 在 GOOGLE 上评价",
-
-        facebook: "访问我们的 FACEBOOK",
-        tripadvisor: "在 TRIPADVISOR 上查看",
-
-        back: "← 返回"
+    if (!allowedLanguages.includes(lang)) {
+        lang = "en";
     }
 
-};
+    let place = params.get("place");
 
-
-const t = translations[lang] || translations.en;
-
-document.documentElement.lang =
-    lang === "zh" ? "zh-CN" : lang;
-
-
-const logo =
-    document.getElementById("logo");
-
-const title =
-    document.getElementById("title");
-
-const menuButtons =
-    document.getElementById("menuButtons");
-
-
-function addMenuButton(text, file) {
-
-    const link =
-        document.createElement("a");
-
-    link.href = file;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.className = "button";
-    link.textContent = text;
-
-    menuButtons.appendChild(link);
-}
-
-
-/* =========================
-   HAPPY KITCHEN
-========================= */
-
-if (place === "happy") {
-
-    logo.src =
-        "IMG_3534.jpeg";
-
-    logo.alt =
-        "Happy Kitchen";
-
-    title.textContent =
-        t.chooseMenu;
-
-
-    /* CHINESE */
-
-    if (lang === "zh") {
-
-        addMenuButton(
-            t.happyAlaCarte,
-            "ALC.pdf"
-        );
-
+    if (place !== "happy" && place !== "bella") {
+        place = "happy";
     }
 
+    /* TRANSLATIONS */
 
-    /* OTHER LANGUAGES */
+    const translations = {
+
+        vi: {
+            chooseMenu: "CHỌN THỰC ĐƠN",
+
+            tour: "THỰC ĐƠN ĐOÀN DU LỊCH (ĐẶT TRƯỚC)",
+            alaCarte: "THỰC ĐƠN GỌI MÓN",
+            drinks: "THỰC ĐƠN ĐỒ UỐNG",
+
+            bellaLounge: "THỰC ĐƠN BELLA LOUNGE",
+            bellaBar: "THỰC ĐƠN ĐỒ UỐNG",
+
+            promoLabel: "ƯU ĐÃI ĐẶC BIỆT",
+            promoButton: "XEM ƯU ĐÃI",
+
+            reviewTitle: "🎁 NHẬN ĐỒ UỐNG MIỄN PHÍ",
+            reviewText: "Để lại đánh giá cho Happy Kitchen trên Google và nhận một đồ uống miễn phí!",
+            reviewButton: "★ ĐỂ LẠI ĐÁNH GIÁ",
+
+            facebook: "FACEBOOK CỦA CHÚNG TÔI",
+            tripadvisor: "XEM TRÊN TRIPADVISOR",
+
+            back: "← Quay lại"
+        },
+
+        ru: {
+            chooseMenu: "ВЫБЕРИТЕ МЕНЮ",
+
+            tour: "МЕНЮ ДЛЯ ТУРГРУПП (ПО ПРЕДЗАКАЗУ)",
+            alaCarte: "МЕНЮ À LA CARTE",
+            drinks: "НАПИТКИ",
+
+            bellaLounge: "МЕНЮ BELLA LOUNGE",
+            bellaBar: "БАРНАЯ КАРТА",
+
+            promoLabel: "СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ",
+            promoButton: "ПОСМОТРЕТЬ АКЦИЮ",
+
+            reviewTitle: "🎁 ПОЛУЧИТЕ БЕСПЛАТНЫЙ НАПИТОК",
+            reviewText: "Оставьте отзыв о Happy Kitchen в Google и получите бесплатный напиток!",
+            reviewButton: "★ ОСТАВИТЬ ОТЗЫВ",
+
+            facebook: "МЫ В FACEBOOK",
+            tripadvisor: "МЫ НА TRIPADVISOR",
+
+            back: "← Назад"
+        },
+
+        en: {
+            chooseMenu: "CHOOSE YOUR MENU",
+
+            tour: "TOUR GROUP MENU (PRE-ORDER)",
+            alaCarte: "À LA CARTE",
+            drinks: "DRINKS",
+
+            bellaLounge: "BELLA LOUNGE MENU",
+            bellaBar: "BAR MENU",
+
+            promoLabel: "SPECIAL OFFER",
+            promoButton: "VIEW OFFER",
+
+            reviewTitle: "🎁 GET A FREE DRINK",
+            reviewText: "Leave a Google review for Happy Kitchen and receive a free drink!",
+            reviewButton: "★ LEAVE A REVIEW",
+
+            facebook: "FOLLOW US ON FACEBOOK",
+            tripadvisor: "VISIT US ON TRIPADVISOR",
+
+            back: "← Back"
+        },
+
+        ko: {
+            chooseMenu: "메뉴를 선택하세요",
+
+            tour: "관광 단체 메뉴 (사전 주문)",
+            alaCarte: "단품 메뉴",
+            drinks: "음료 메뉴",
+
+            bellaLounge: "BELLA LOUNGE 메뉴",
+            bellaBar: "바 메뉴",
+
+            promoLabel: "특별 프로모션",
+            promoButton: "프로모션 보기",
+
+            reviewTitle: "🎁 무료 음료 받기",
+            reviewText: "Google에 Happy Kitchen 리뷰를 남기고 무료 음료를 받으세요!",
+            reviewButton: "★ 리뷰 남기기",
+
+            facebook: "FACEBOOK 팔로우",
+            tripadvisor: "TRIPADVISOR에서 보기",
+
+            back: "← 뒤로"
+        },
+
+        zh: {
+            chooseMenu: "选择菜单",
+
+            alaCarte: "单点菜单",
+
+            promoLabel: "特别优惠",
+            promoButton: "查看优惠",
+
+            reviewTitle: "🎁 免费领取饮品",
+            reviewText: "在 Google 上为 Happy Kitchen 留下评价，即可免费获得一杯饮品！",
+            reviewButton: "★ 在 GOOGLE 上评价",
+
+            facebook: "访问我们的 FACEBOOK",
+            tripadvisor: "在 TRIPADVISOR 上查看",
+
+            back: "← 返回"
+        }
+    };
+
+    const t = translations[lang];
+
+    document.documentElement.lang =
+        lang === "zh" ? "zh-CN" : lang;
+
+    /* ELEMENTS */
+
+    const logo = document.getElementById("logo");
+    const title = document.getElementById("title");
+    const menuButtons = document.getElementById("menuButtons");
+
+    /* CREATE MENU BUTTON */
+
+    function addMenuButton(text, file) {
+
+        const link = document.createElement("a");
+
+        link.href = "./" + file;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.className = "button";
+        link.textContent = text;
+
+        menuButtons.appendChild(link);
+    }
+
+    /* ==========================
+       HAPPY KITCHEN
+    ========================== */
+
+    if (place === "happy") {
+
+        logo.src = "IMG_3534.jpeg";
+        logo.alt = "Happy Kitchen";
+
+        title.textContent = t.chooseMenu;
+
+        /* CHINESE: ONLY ALC.PDF */
+
+        if (lang === "zh") {
+
+            addMenuButton(
+                t.alaCarte,
+                "ALC.pdf"
+            );
+
+        } else {
+
+            /* TOUR GROUP MENU */
+
+            addMenuButton(
+                t.tour,
+                "Menu.pdf"
+            );
+
+            /* A LA CARTE */
+
+            addMenuButton(
+                t.alaCarte,
+                "ALC.pdf"
+            );
+
+            /* DRINKS */
+
+            addMenuButton(
+                t.drinks,
+                "drinks.pdf"
+            );
+        }
+
+        document.getElementById("footer").textContent =
+            "HAPPY KITCHEN · PHU QUOC";
+    }
+
+    /* ==========================
+       BELLA LOUNGE
+    ========================== */
 
     else {
 
-        addMenuButton(
-            t.happyTour,
-            "Menu.pdf"
-        );
+        logo.src = "IMG_3613.jpeg";
+        logo.alt = "Bella Lounge";
+
+        title.textContent = t.chooseMenu;
+
+        /*
+           VIETNAMESE:
+           loungevn.pdf
+
+           RUSSIAN / ENGLISH / KOREAN:
+           lounge.pdf
+        */
+
+        const loungeFile =
+            lang === "vi"
+                ? "loungevn.pdf"
+                : "lounge.pdf";
+
+        /* BELLA FOOD MENU */
 
         addMenuButton(
-            t.happyAlaCarte,
-            "ALC.pdf"
+            t.bellaLounge,
+            loungeFile
         );
+
+        /* BELLA BAR MENU */
 
         addMenuButton(
-            t.happyDrinks,
-            "drinks.pdf"
+            t.bellaBar,
+            "bar.pdf"
         );
 
+        /* HIDE HAPPY KITCHEN PROMOTIONS */
+
+        document.getElementById("promoBox")
+            .classList.add("hidden");
+
+        document.getElementById("reviewBox")
+            .classList.add("hidden");
+
+        document.getElementById("socialLinks")
+            .classList.add("hidden");
+
+        document.getElementById("footer").textContent =
+            "BELLA LOUNGE · PHU QUOC";
     }
 
+    /* PROMOTION */
 
-    document.getElementById("footer").textContent =
-        "HAPPY KITCHEN · PHU QUOC";
+    document.getElementById("promoLabel").textContent =
+        t.promoLabel || "";
 
-}
+    document.getElementById("promoButton").textContent =
+        t.promoButton || "";
 
+    /* GOOGLE REVIEW */
 
-/* =========================
-   BELLA LOUNGE
-========================= */
+    document.getElementById("reviewTitle").textContent =
+        t.reviewTitle || "";
 
-else {
+    document.getElementById("reviewText").textContent =
+        t.reviewText || "";
 
-    logo.src =
-        "IMG_3613.jpeg";
+    document.getElementById("reviewButton").textContent =
+        t.reviewButton || "";
 
-    logo.alt =
-        "Bella Lounge";
+    /* FACEBOOK */
 
-    title.textContent =
-        t.chooseMenu;
+    document.getElementById("facebookButton").textContent =
+        t.facebook || "";
 
+    /* TRIPADVISOR */
 
-    addMenuButton(
-        t.bellaLounge,
-        "lounge.pdf"
-    );
+    document.getElementById("tripadvisorButton").textContent =
+        t.tripadvisor || "";
 
-    addMenuButton(
-        t.bellaBar,
-        "bar.pdf"
-    );
+    /* BACK BUTTON */
 
+    document.getElementById("back").textContent =
+        t.back;
 
-    document
-        .getElementById("promoBox")
-        .classList.add("hidden");
-
-    document
-        .getElementById("reviewBox")
-        .classList.add("hidden");
-
-    document
-        .getElementById("socialLinks")
-        .classList.add("hidden");
-
-
-    document.getElementById("footer").textContent =
-        "BELLA LOUNGE · PHU QUOC";
-
-}
-
-
-/* PROMOTION */
-
-document.getElementById("promoLabel").textContent =
-    t.promoLabel || "";
-
-document.getElementById("promoButton").textContent =
-    t.promoButton || "";
-
-
-/* GOOGLE */
-
-document.getElementById("reviewTitle").textContent =
-    t.reviewTitle || "";
-
-document.getElementById("reviewText").textContent =
-    t.reviewText || "";
-
-document.getElementById("reviewButton").textContent =
-    t.reviewButton || "";
-
-
-/* SOCIAL */
-
-document.getElementById("facebookButton").textContent =
-    t.facebook || "";
-
-document.getElementById("tripadvisorButton").textContent =
-    t.tripadvisor || "";
-
-
-/* BACK */
-
-document.getElementById("back").textContent =
-    t.back || "← Back";
-
-document.getElementById("back").href =
-    "menu.html?lang=" + lang;
+    document.getElementById("back").href =
+        "./menu.html?lang=" + encodeURIComponent(lang);
 
 </script>
 
 </body>
-</html>i
+</html>
